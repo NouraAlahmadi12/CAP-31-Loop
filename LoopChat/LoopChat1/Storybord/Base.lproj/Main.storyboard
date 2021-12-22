@@ -299,9 +299,6 @@
                                                                     <rect key="frame" x="119" y="0.0" width="114" height="35"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="tinted" title="Ready To Go.."/>
-                                                                    <connections>
-                                                                        <action selector="actionButton:" destination="GIf-6N-jZC" eventType="touchUpInside" id="OIH-bn-kh3"/>
-                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -326,9 +323,6 @@
                                                                     <rect key="frame" x="201" y="0.0" width="68" height="35"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" title="Sign in"/>
-                                                                    <connections>
-                                                                        <action selector="slideButton:" destination="GIf-6N-jZC" eventType="touchUpInside" id="3wY-Oy-hFQ"/>
-                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -358,11 +352,11 @@
                                         <size key="customSize" width="398" height="287"/>
                                         <connections>
                                             <outlet property="UserName" destination="acJ-r6-z3p" id="O3N-5Q-jPP"/>
-                                            <outlet property="actionButtonTEXT" destination="ekR-1f-9Yb" id="Afd-N7-mrx"/>
+                                            <outlet property="actionButton" destination="ekR-1f-9Yb" id="LZs-yh-KtR"/>
                                             <outlet property="confirmPassword" destination="yHU-t3-NEB" id="fab-iL-vkc"/>
                                             <outlet property="email" destination="l4W-qi-5hX" id="zxt-Ij-WzK"/>
                                             <outlet property="password" destination="XRN-u7-siS" id="iGZ-qc-rw7"/>
-                                            <outlet property="slideButtonTEXT" destination="3ov-Uf-WDc" id="8P3-ky-boL"/>
+                                            <outlet property="slideButton" destination="3ov-Uf-WDc" id="mBl-9M-res"/>
                                             <outlet property="statusLabel" destination="ird-Ps-Zwg" id="Qmg-TJ-5pY"/>
                                         </connections>
                                     </collectionViewCell>

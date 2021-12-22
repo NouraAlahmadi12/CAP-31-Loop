@@ -14,11 +14,7 @@ class UserCVCell: UICollectionViewCell {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
-    @IBOutlet weak var actionButtonTEXT: UIButton!
-    @IBOutlet weak var slideButtonTEXT: UIButton!
+    @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var slideButton: UIButton!
 
-    @IBAction func actionButton(_ sender: Any) {
-    }
-    @IBAction func slideButton(_ sender: Any) {
-    }
 }

@@ -49,7 +49,7 @@
 		518BC42D276F102E00A7A3D1 = {
 			isa = PBXGroup;
 			children = (
-				518BC438276F102E00A7A3D1 /* LoopChat1 */,
+				51FB22502771FB4C006449E6 /* LoopChat1 */,
 				518BC437276F102E00A7A3D1 /* Products */,
 				DB6B598F9F7970CC7C1E43D1 /* Pods */,
 				FE6787FAE90CDD76021D0E14 /* Frameworks */,
@@ -64,16 +64,48 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		518BC438276F102E00A7A3D1 /* LoopChat1 */ = {
+		51D7DECE2771ED6C00568A57 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				518BC439276F102E00A7A3D1 /* AppDelegate.swift */,
 				518BC43B276F102E00A7A3D1 /* SceneDelegate.swift */,
+				518BC439276F102E00A7A3D1 /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		51D7DECF2771ED9200568A57 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				51DFF51127707585004CA002 /* SignupAndLoginVC.swift */,
 				510EEA4C2771053000C1D669 /* UserCVCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		51D7DED02771EDA800568A57 /* Storybord */ = {
+			isa = PBXGroup;
+			children = (
 				518BC43F276F102E00A7A3D1 /* Main.storyboard */,
-				518BC442276F103100A7A3D1 /* Assets.xcassets */,
 				518BC444276F103100A7A3D1 /* LaunchScreen.storyboard */,
+			);
+			path = Storybord;
+			sourceTree = "<group>";
+		};
+		51D7DED22771EDE600568A57 /* media */ = {
+			isa = PBXGroup;
+			children = (
+				518BC442276F103100A7A3D1 /* Assets.xcassets */,
+			);
+			path = media;
+			sourceTree = "<group>";
+		};
+		51FB22502771FB4C006449E6 /* LoopChat1 */ = {
+			isa = PBXGroup;
+			children = (
+				51D7DECE2771ED6C00568A57 /* Delegate */,
+				51D7DECF2771ED9200568A57 /* Controller */,
+				51D7DED02771EDA800568A57 /* Storybord */,
+				51D7DED22771EDE600568A57 /* media */,
 				518BC447276F103100A7A3D1 /* Info.plist */,
 				51055E3F276F11F20093B8DA /* GoogleService-Info.plist */,
 			);
@@ -293,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -348,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -364,9 +396,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XTCC8936T4;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoopChat1/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LoopChat;
@@ -382,6 +415,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = T.LoopChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
