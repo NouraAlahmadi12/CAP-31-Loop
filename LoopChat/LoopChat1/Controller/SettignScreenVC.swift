@@ -1,0 +1,36 @@
+//
+//  SettignScreenVC.swift
+//  LoopChat1
+//
+//  Created by Noura Alahmadi on 19/05/1443 AH.
+//
+
+import UIKit
+class SettignScreenVC: UIViewController {
+    
+    @IBOutlet weak var darkAndLightMood: UISwitch!
+    
+    @IBAction func darkAndLightMoodAction(_ sender: Any) {
+        
+        if(darkAndLightMood.isOn == true){
+            let appView = UIApplication.shared.windows.first
+            appView?.overrideUserInterfaceStyle = .light
+        }else{
+            
+            let appView = UIApplication.shared.windows.first
+            appView?.overrideUserInterfaceStyle = .dark
+    }
+    }
+    @IBAction func logoutButton(_ sender: Any) {
+        
+        let homeScreem = storyboard?.instantiateViewController(withIdentifier: "HomeScreenID") as! SignupAndLoginVC
+        present(homeScreem, animated: true, completion: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        
+    }
+}

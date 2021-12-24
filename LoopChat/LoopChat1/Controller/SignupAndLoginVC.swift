@@ -10,16 +10,12 @@ import Firebase
 class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource{
     
     @IBOutlet weak var signupAndSigninCV: UICollectionView!
-    
-    //    let refrenceFromDatabase = Database.database().reference()
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         signupAndSigninCV.delegate = self
         signupAndSigninCV.dataSource = self
         signupAndSigninCV.isScrollEnabled = false
-        
-        
     }
     
     // MARK: CollectionView function
@@ -50,7 +46,6 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
             cell.slideButton.setTitle("Sign in", for: .normal)
             cell.slideButton.addTarget(self, action: #selector(slideToSignUpCell(_:)), for: .touchUpInside)
             cell.actionButton.addTarget(self, action: #selector(signupButtonAction(_:)), for: .touchUpInside)
-            
         }
         return cell
     }
@@ -85,24 +80,24 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
                     let oneUser = refrenceFromDatabase.child("Users").child(userID)
                     let userDataArray:[String : Any] = ["userName" : userName]
                     oneUser.setValue(userDataArray)
-                    //                print(result)
                 }
             }
         }
     }
     
-    /* take the actioButton and make it signup button action*/
+    /* take the actioButton and make it log in button action*/
     @objc func loginButtonAction(_ sender: UIButton){
         let path = IndexPath(row: 0, section: 0)
         let loginUserInfo = signupAndSigninCV.cellForItem(at: path) as! UserCVCell
         guard let email = loginUserInfo.email.text , let password = loginUserInfo.password.text else{
             return
         }
-        if(email.isEmpty == true || password.isEmpty == true){
+        if(password.isEmpty == true){
             self.showError(errorView: "can not be Empty")
         }else{
             Auth.auth().signIn(withEmail: email, password: password) { result, error in
                 if(error == nil){
+                    self.dismiss(animated: true, completion: nil)
                 }else{
                     self.showError(errorView: "User name or Password is wrong")
                 }
