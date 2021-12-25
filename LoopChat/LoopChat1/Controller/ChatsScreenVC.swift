@@ -6,12 +6,22 @@
 //
 
 import UIKit
+import Firebase
 
 class ChatsScreenVC: UIViewController {
-
+    
+    let settingScreen = SettignScreenVC()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        var currentUser = Auth.auth().currentUser
+        if (currentUser == nil){
+            settingScreen.presentHomeScreen()
+        }
+        
     }
 }

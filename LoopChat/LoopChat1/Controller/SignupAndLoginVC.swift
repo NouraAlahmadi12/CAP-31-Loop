@@ -10,7 +10,7 @@ import Firebase
 class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource{
     
     @IBOutlet weak var signupAndSigninCV: UICollectionView!
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         signupAndSigninCV.delegate = self
@@ -30,7 +30,7 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
         /* Log in cell */
         if(indexPath.row == 0){
             cell.confirmPassword.isHidden = true
-            cell.email.isHidden = true
+            cell.UserName.isHidden = true
             cell.statusLabel.text = "Don't have an account ?"
             cell.actionButton.setTitle("Sign in", for: .normal)
             cell.slideButton.setTitle("Join Us..!", for: .normal)
@@ -41,6 +41,9 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
         }else{
             cell.confirmPassword.isHidden = false
             cell.email.isHidden = false
+            /* hidden for now only*/
+            cell.confirmPassword.isHidden = true
+            
             cell.statusLabel.text = "Already have an account ?"
             cell.actionButton.setTitle("Ready to go..", for: .normal)
             cell.slideButton.setTitle("Sign in", for: .normal)
@@ -73,6 +76,7 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
         }else{
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if(error == nil){
+                    print("sign up")
                     let refrenceFromDatabase = Database.database().reference()
                     guard let userID = result?.user.uid , let userName = signupUserInfo.UserName.text else{
                         return
@@ -80,7 +84,7 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
                     let oneUser = refrenceFromDatabase.child("Users").child(userID)
                     let userDataArray:[String : Any] = ["userName" : userName]
                     oneUser.setValue(userDataArray)
-                }
+                }else{print("not sign up")}
             }
         }
     }
@@ -97,6 +101,7 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
         }else{
             Auth.auth().signIn(withEmail: email, password: password) { result, error in
                 if(error == nil){
+                    self.presentChatScreen()
                     self.dismiss(animated: true, completion: nil)
                 }else{
                     self.showError(errorView: "User name or Password is wrong")
@@ -111,6 +116,11 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
         present(alert, animated: true)
         let button = UIAlertAction.init(title: "OK", style: .default, handler: nil)
         alert.addAction(button)
+    }
+    
+    func presentChatScreen(){
+        let chatScreen = storyboard?.instantiateViewController(withIdentifier: "ChatID") as! ChatsScreenVC
+        present(chatScreen, animated: true, completion: nil)
     }
     
     
