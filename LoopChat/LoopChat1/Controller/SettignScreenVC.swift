@@ -26,8 +26,9 @@ class SettignScreenVC: UIViewController {
     }
     
     func presentHomeScreen (){
-        let homeScreem = storyboard?.instantiateViewController(withIdentifier: "HomeScreenID") as! SignupAndLoginVC
-        present(homeScreem, animated: true, completion: nil)
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "HomeScreenID") as! SignupAndLoginVC
+        self.view.window?.rootViewController = viewController
+        self.view.window?.makeKeyAndVisible()
     }
     override func viewDidLoad() {
         super.viewDidLoad()

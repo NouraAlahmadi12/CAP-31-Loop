@@ -41,9 +41,6 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
         }else{
             cell.confirmPassword.isHidden = false
             cell.email.isHidden = false
-            /* hidden for now only*/
-            cell.confirmPassword.isHidden = true
-            
             cell.statusLabel.text = "Already have an account ?"
             cell.actionButton.setTitle("Ready to go..", for: .normal)
             cell.slideButton.setTitle("Sign in", for: .normal)
@@ -68,11 +65,13 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
         let path = IndexPath(row: 1, section: 0)
         signupAndSigninCV.scrollToItem(at: path, at: .centeredHorizontally, animated: true)
         let signupUserInfo = signupAndSigninCV.cellForItem(at: path) as! UserCVCell
-        guard let email = signupUserInfo.email.text , let password = signupUserInfo.password.text else{
+        guard let email = signupUserInfo.email.text , let password = signupUserInfo.password.text , let confirmPassword = signupUserInfo.confirmPassword.text else{
             return
         }
         if(email.isEmpty == true || password.isEmpty == true){
             self.showError(errorView: "can not be Empty")
+        }else if(password != confirmPassword){
+            self.showError(errorView: "The passwords is not match")
         }else{
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if(error == nil){
@@ -84,7 +83,7 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
                     let oneUser = refrenceFromDatabase.child("Users").child(userID)
                     let userDataArray:[String : Any] = ["userName" : userName]
                     oneUser.setValue(userDataArray)
-                }else{print("not sign up")}
+                }
             }
         }
     }
@@ -102,15 +101,12 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
             Auth.auth().signIn(withEmail: email, password: password) { result, error in
                 if(error == nil){
                     self.presentChatScreen()
-                    self.dismiss(animated: true, completion: nil)
                 }else{
                     self.showError(errorView: "User name or Password is wrong")
                 }
             }
         }
     }
-    
-    
     func showError(errorView:String){
         let alert = UIAlertController.init(title: "Error", message: errorView, preferredStyle: .alert)
         present(alert, animated: true)
@@ -119,10 +115,8 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
     }
     
     func presentChatScreen(){
-        let chatScreen = storyboard?.instantiateViewController(withIdentifier: "ChatID") as! ChatsScreenVC
-        present(chatScreen, animated: true, completion: nil)
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "ChatID") as! ChatsScreenVC
+        self.view.window?.rootViewController = viewController
+        self.view.window?.makeKeyAndVisible()
     }
-    
-    
-    
 }
