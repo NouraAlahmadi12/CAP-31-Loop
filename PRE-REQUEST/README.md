@@ -12,6 +12,6 @@
 - As a user I can log out
 
 
-#ERD (Entity relation Digram)
+# ERD (Entity relation Digram)
 
-#Sketch
+# Sketch
