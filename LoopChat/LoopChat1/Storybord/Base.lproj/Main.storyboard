@@ -9,70 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Select Chat-->
-        <scene sceneID="5N8-Wm-kdb">
-            <objects>
-                <viewController storyboardIdentifier="ChatID" id="FqU-99-YyS" customClass="ChatsScreenVC" customModule="LoopChat1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Q8L-Lx-yg7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEO-ED-VSW">
-                                <rect key="frame" x="20" y="156" width="374" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="             Swift Community">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="Q0C-uA-gxX" kind="show" id="qqL-gw-P0A"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SwiftCommunity" translatesAutoresizingMaskIntoConstraints="NO" id="iVt-HE-PLK">
-                                <rect key="frame" x="20" y="156" width="107" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYQ-2J-Zbf">
-                                <rect key="frame" x="20" y="471" width="374" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="             C# Community">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                </buttonConfiguration>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="C#Community" translatesAutoresizingMaskIntoConstraints="NO" id="faT-AW-3AC">
-                                <rect key="frame" x="20" y="471" width="122" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYp-Ap-PRh">
-                                <rect key="frame" x="20" y="318" width="374" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="             Java Community">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                </buttonConfiguration>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="JavaCommunity" translatesAutoresizingMaskIntoConstraints="NO" id="W7V-fE-Zyt">
-                                <rect key="frame" x="20" y="318" width="122" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="7hm-88-oA6"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Select Chat" id="6F5-sR-arC">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="X56-1D-gRB">
-                            <color key="tintColor" red="0.099954597651958466" green="0.21727582812309265" blue="0.30162966251373291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="rTu-QX-y3D" kind="show" id="nmw-FK-Xua"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XLp-CX-Tef" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3357" y="80"/>
-        </scene>
         <!--Settign ScreenVC-->
         <scene sceneID="03c-Lq-N2v">
             <objects>
@@ -136,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRS-rd-iG0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4654" y="-263"/>
+            <point key="canvasLocation" x="4458" y="-263"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cnV-x6-Jh3">
@@ -213,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHe-3o-07N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4654" y="422"/>
+            <point key="canvasLocation" x="4458" y="410"/>
         </scene>
         <!--Signup And LoginVC-->
         <scene sceneID="84J-A4-QOD">
@@ -447,18 +383,68 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="FqU-99-YyS" kind="relationship" relationship="rootViewController" id="GZv-lO-Xtf"/>
+                        <segue destination="dDO-Il-hMp" kind="relationship" relationship="rootViewController" id="f73-4e-AZD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Llx-8m-bHZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2446" y="80"/>
         </scene>
+        <!--Select Community-->
+        <scene sceneID="0TQ-hD-e2C">
+            <objects>
+                <viewController id="dDO-Il-hMp" customClass="CommunityVC" customModule="LoopChat1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9VO-vP-7Ik">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5kR-8x-w3c">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Z6-Wf-XI8">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zUp-D6-ANm">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Vwc-Oe-KGY">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FhK-m4-UQg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5kR-8x-w3c" firstAttribute="leading" secondItem="FhK-m4-UQg" secondAttribute="leading" id="dXp-1C-V6v"/>
+                            <constraint firstItem="FhK-m4-UQg" firstAttribute="trailing" secondItem="5kR-8x-w3c" secondAttribute="trailing" id="hiV-aS-SXb"/>
+                            <constraint firstItem="5kR-8x-w3c" firstAttribute="top" secondItem="FhK-m4-UQg" secondAttribute="top" id="tmO-Ub-Qrm"/>
+                            <constraint firstItem="FhK-m4-UQg" firstAttribute="bottom" secondItem="5kR-8x-w3c" secondAttribute="bottom" id="veh-4c-ofE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Community" id="EWJ-xn-WVd">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="Zwb-ZH-0aZ">
+                            <connections>
+                                <segue destination="rTu-QX-y3D" kind="show" id="VAO-Uv-mGu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="CommunityCV" destination="5kR-8x-w3c" id="2RU-9L-PZf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fy5-Ta-fKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3200" y="80"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="C#Community" width="512" height="512"/>
-        <image name="JavaCommunity" width="400" height="400"/>
-        <image name="SwiftCommunity" width="1138" height="1024"/>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="highlighter" catalog="system" width="128" height="119"/>
