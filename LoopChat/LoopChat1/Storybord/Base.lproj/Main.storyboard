@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZPm-3f-Erf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c1n-4m-wMV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -126,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="5438" y="-263"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat ScreentVC-->
         <scene sceneID="MgT-gc-ueM">
             <objects>
-                <viewController id="Q0C-uA-gxX" sceneMemberID="viewController">
+                <viewController id="Q0C-uA-gxX" customClass="ChatScreentVC" customModule="LoopChat1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xve-XR-RFd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -383,68 +383,73 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="dDO-Il-hMp" kind="relationship" relationship="rootViewController" id="f73-4e-AZD"/>
+                        <segue destination="ik5-Tf-FVr" kind="relationship" relationship="rootViewController" id="SPU-At-8xO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Llx-8m-bHZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2446" y="80"/>
         </scene>
-        <!--Select Community-->
-        <scene sceneID="0TQ-hD-e2C">
+        <!--CommunityVC-->
+        <scene sceneID="pzT-pP-7ie">
             <objects>
-                <viewController id="dDO-Il-hMp" customClass="CommunityVC" customModule="LoopChat1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9VO-vP-7Ik">
+                <viewController storyboardIdentifier="CommunityScreenID" id="ik5-Tf-FVr" customClass="CommunityVC" customModule="LoopChat1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w5j-mj-5ox">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5kR-8x-w3c">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Z6-Wf-XI8">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zUp-D6-ANm">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Vwc-Oe-KGY">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAy-7Z-318">
+                                <rect key="frame" x="20" y="180" width="374" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Swift community"/>
+                                <connections>
+                                    <segue destination="Q0C-uA-gxX" kind="show" id="Mpg-IS-LFn"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SwiftCommunity" translatesAutoresizingMaskIntoConstraints="NO" id="T3E-Wq-Gjw">
+                                <rect key="frame" x="20" y="180" width="111" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ynu-45-PEa">
+                                <rect key="frame" x="20" y="449" width="374" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Swift community"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SwiftCommunity" translatesAutoresizingMaskIntoConstraints="NO" id="L5D-ES-ffC">
+                                <rect key="frame" x="20" y="449" width="111" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwQ-kN-F9f">
+                                <rect key="frame" x="20" y="324" width="374" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Swift community"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SwiftCommunity" translatesAutoresizingMaskIntoConstraints="NO" id="VcL-dm-rRh">
+                                <rect key="frame" x="20" y="324" width="111" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="FhK-m4-UQg"/>
+                        <viewLayoutGuide key="safeArea" id="8G2-sJ-KUD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="5kR-8x-w3c" firstAttribute="leading" secondItem="FhK-m4-UQg" secondAttribute="leading" id="dXp-1C-V6v"/>
-                            <constraint firstItem="FhK-m4-UQg" firstAttribute="trailing" secondItem="5kR-8x-w3c" secondAttribute="trailing" id="hiV-aS-SXb"/>
-                            <constraint firstItem="5kR-8x-w3c" firstAttribute="top" secondItem="FhK-m4-UQg" secondAttribute="top" id="tmO-Ub-Qrm"/>
-                            <constraint firstItem="FhK-m4-UQg" firstAttribute="bottom" secondItem="5kR-8x-w3c" secondAttribute="bottom" id="veh-4c-ofE"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Select Community" id="EWJ-xn-WVd">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="Zwb-ZH-0aZ">
+                    <navigationItem key="navigationItem" id="UVE-J6-hzm">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="poa-Wm-CZS">
                             <connections>
-                                <segue destination="rTu-QX-y3D" kind="show" id="VAO-Uv-mGu"/>
+                                <segue destination="rTu-QX-y3D" kind="show" id="6Pa-FM-ETY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="CommunityCV" destination="5kR-8x-w3c" id="2RU-9L-PZf"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fy5-Ta-fKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S52-fD-aYp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3200" y="80"/>
+            <point key="canvasLocation" x="3266.666666666667" y="79.6875"/>
         </scene>
     </scenes>
     <resources>
+        <image name="SwiftCommunity" width="1138" height="1024"/>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="highlighter" catalog="system" width="128" height="119"/>

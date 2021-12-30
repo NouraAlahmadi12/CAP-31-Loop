@@ -7,10 +7,19 @@
 
 import Foundation
 import FirebaseFirestore
-struct Community {
+class Community {
     
-    let chatName : String
-    let chatID : String
-    let chatMember : [DocumentReference] = []
-    let Message : [DocumentReference] = []
+    var communityName : String = ""
+    var communityID : String? = nil
+    var communityImage : UIImage? = nil
+    var communityMember : [DocumentReference] = []
+    var Message : [DocumentReference] = []
+}
+class Communitys: Community {
+    
+    func createCommunity(name: String ,cImage: UIImage ){
+        communityName = name
+        communityImage = cImage
+    }
+    
 }

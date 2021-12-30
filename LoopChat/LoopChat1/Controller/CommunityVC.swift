@@ -10,11 +10,19 @@ import Firebase
 
 class CommunityVC: UIViewController {
     
-    
-    @IBOutlet weak var CommunityCV: UICollectionView!
-    
+    let userActive = SignupAndLoginVC()
+    let userNotActive = SettignScreenVC()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let currentUser = Auth.auth().currentUser
+        if (currentUser != nil){
+            userActive.presentChatScreen()
+        }else{
+            userNotActive.presentHomeScreen()
+        }
     }
 }

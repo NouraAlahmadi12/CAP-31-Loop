@@ -115,7 +115,7 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
     }
     
     func presentChatScreen(){
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "ChatID") as! ChatsScreenVC
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "CommunityScreenID") as! CommunityVC
         self.view.window?.rootViewController = viewController
         self.view.window?.makeKeyAndVisible()
     }
