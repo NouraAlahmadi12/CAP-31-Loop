@@ -22,14 +22,13 @@ class SettignScreenVC: UIViewController {
     }
     @IBAction func logoutButton(_ sender: Any) {
         try! Auth.auth().signOut()
+        
         presentHomeScreen()
     }
     
     func presentHomeScreen (){
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "HomeScreenID") as! SignupAndLoginVC
-        self.view.window?.rootViewController = viewController
-        self.view.window?.makeKeyAndVisible()
-    }
+        self.navigationController?.popToRootViewController(animated: true)
+    }    
     override func viewDidLoad() {
         super.viewDidLoad()
         

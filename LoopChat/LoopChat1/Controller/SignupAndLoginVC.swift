@@ -99,8 +99,8 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
             self.showError(errorView: "can not be Empty")
         }else{
             Auth.auth().signIn(withEmail: email, password: password) { result, error in
-                if(error == nil){
-                    self.presentChatScreen()
+                if(error == nil) {
+                    self.dismiss(animated: true, completion: nil)
                 }else{
                     self.showError(errorView: "User name or Password is wrong")
                 }
@@ -112,11 +112,5 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
         present(alert, animated: true)
         let button = UIAlertAction.init(title: "OK", style: .default, handler: nil)
         alert.addAction(button)
-    }
-    
-    func presentChatScreen(){
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "CommunityScreenID") as! CommunityVC
-        self.view.window?.rootViewController = viewController
-        self.view.window?.makeKeyAndVisible()
     }
 }

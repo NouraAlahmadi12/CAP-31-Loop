@@ -21,6 +21,7 @@
 		519BD559277C506300EBF334 /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519BD558277C506300EBF334 /* Community.swift */; };
 		519BD55B277C509C00EBF334 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519BD55A277C509C00EBF334 /* Message.swift */; };
 		519BD55D277C50BC00EBF334 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519BD55C277C50BC00EBF334 /* User.swift */; };
+		51D147F9277DC96A00DC82C2 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D147F8277DC96A00DC82C2 /* Helper.swift */; };
 		51DFF51227707585004CA002 /* SignupAndLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF51127707585004CA002 /* SignupAndLoginVC.swift */; };
 		B953F940DC4274D1E1382055 /* Pods_LoopChat1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6584EC13E020C3E3C878F6 /* Pods_LoopChat1.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		519BD558277C506300EBF334 /* Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
 		519BD55A277C509C00EBF334 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		519BD55C277C50BC00EBF334 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		51D147F8277DC96A00DC82C2 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		51DFF51127707585004CA002 /* SignupAndLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAndLoginVC.swift; sourceTree = "<group>"; };
 		5E1D14C7C6EF73BC04BC0BF4 /* Pods-LoopChat1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopChat1.release.xcconfig"; path = "Target Support Files/Pods-LoopChat1/Pods-LoopChat1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 				51D7DED22771EDE600568A57 /* media */,
 				518BC447276F103100A7A3D1 /* Info.plist */,
 				51055E3F276F11F20093B8DA /* GoogleService-Info.plist */,
+				51D147F8277DC96A00DC82C2 /* Helper.swift */,
 			);
 			path = LoopChat1;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D147F9277DC96A00DC82C2 /* Helper.swift in Sources */,
 				51963ADC277D9FB3004EC3B4 /* ChatScreentVC.swift in Sources */,
 				514A26E327745D6F0047865B /* CommunityVC.swift in Sources */,
 				518BC43A276F102E00A7A3D1 /* AppDelegate.swift in Sources */,

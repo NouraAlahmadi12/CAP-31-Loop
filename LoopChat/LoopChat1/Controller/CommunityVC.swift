@@ -10,19 +10,19 @@ import Firebase
 
 class CommunityVC: UIViewController {
     
-    let userActive = SignupAndLoginVC()
-    let userNotActive = SettignScreenVC()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
-    
     override func viewDidAppear(_ animated: Bool) {
         let currentUser = Auth.auth().currentUser
-        if (currentUser != nil){
-            userActive.presentChatScreen()
-        }else{
-            userNotActive.presentHomeScreen()
+        if (currentUser?.uid == nil ) {
+            presentHomeScreen()
         }
+    }
+    func presentHomeScreen (){
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "HomeScreenID") as! SignupAndLoginVC
+        viewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.showDetailViewController(viewController, sender: self)
     }
 }
