@@ -11,6 +11,7 @@
 		510EEA4D2771053000C1D669 /* UserCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510EEA4C2771053000C1D669 /* UserCVCell.swift */; };
 		514A26DF27745CC50047865B /* SettignScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A26DE27745CC40047865B /* SettignScreenVC.swift */; };
 		514A26E327745D6F0047865B /* CommunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A26E227745D6F0047865B /* CommunityVC.swift */; };
+		515147CD2782185C003FC2A0 /* CreateScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515147CC2782185C003FC2A0 /* CreateScreenVC.swift */; };
 		516FD87B277EE5BE00F5AFCC /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516FD879277EE5BE00F5AFCC /* MessageCell.swift */; };
 		516FD87C277EE5BF00F5AFCC /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516FD87A277EE5BE00F5AFCC /* MessageCell.xib */; };
 		517B455B27817F7900C9CB0C /* CommunityCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B455A27817F7900C9CB0C /* CommunityCVCell.swift */; };
@@ -34,6 +35,7 @@
 		510EEA4C2771053000C1D669 /* UserCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCVCell.swift; sourceTree = "<group>"; };
 		514A26DE27745CC40047865B /* SettignScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettignScreenVC.swift; sourceTree = "<group>"; };
 		514A26E227745D6F0047865B /* CommunityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityVC.swift; sourceTree = "<group>"; };
+		515147CC2782185C003FC2A0 /* CreateScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenVC.swift; sourceTree = "<group>"; };
 		516FD879277EE5BE00F5AFCC /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		516FD87A277EE5BE00F5AFCC /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		517B455A27817F7900C9CB0C /* CommunityCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCVCell.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				514A26DE27745CC40047865B /* SettignScreenVC.swift */,
 				514A26E227745D6F0047865B /* CommunityVC.swift */,
 				51963ADB277D9FB3004EC3B4 /* ChatScreentVC.swift */,
+				515147CC2782185C003FC2A0 /* CreateScreenVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				510EEA4D2771053000C1D669 /* UserCVCell.swift in Sources */,
 				514A26DF27745CC50047865B /* SettignScreenVC.swift in Sources */,
 				519BD55D277C50BC00EBF334 /* User.swift in Sources */,
+				515147CD2782185C003FC2A0 /* CreateScreenVC.swift in Sources */,
 				517B455B27817F7900C9CB0C /* CommunityCVCell.swift in Sources */,
 				519BD559277C506300EBF334 /* Community.swift in Sources */,
 			);

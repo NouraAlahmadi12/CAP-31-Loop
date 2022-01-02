@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 struct Message {
     let MessageID : String
     let date : Date

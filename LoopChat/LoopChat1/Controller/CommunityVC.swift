@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-
+import FirebaseFirestoreSwift
 class CommunityVC: UIViewController ,UICollectionViewDelegate , UICollectionViewDataSource{
     
     @IBOutlet weak var roomOfCommunityCV: UICollectionView!
@@ -22,8 +22,8 @@ class CommunityVC: UIViewController ,UICollectionViewDelegate , UICollectionView
     }
   
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = (storyboard?.instantiateViewController(withIdentifier: "ChatScreenID")) as! ChatScreentVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        let viewController = (storyboard?.instantiateViewController(withIdentifier: "ChatScreenID")) as! ChatScreentVC
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func presentLoginScreen (){
