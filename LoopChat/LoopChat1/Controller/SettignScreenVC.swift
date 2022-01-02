@@ -22,11 +22,10 @@ class SettignScreenVC: UIViewController {
     }
     @IBAction func logoutButton(_ sender: Any) {
         try! Auth.auth().signOut()
-        
-        presentHomeScreen()
+        presentLoginScreen()
     }
     
-    func presentHomeScreen (){
+    func presentLoginScreen (){
         self.navigationController?.popToRootViewController(animated: true)
     }    
     override func viewDidLoad() {
