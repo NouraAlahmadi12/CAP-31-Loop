@@ -16,7 +16,6 @@ class ChatScreentVC: UIViewController , UITableViewDelegate , UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = chatTableView.dequeueReusableCell(withIdentifier: "ChatCellID")!
-//        cell.textLabel?.text = "Hello"
         cell.textLabel?.text = arrmasseg[indexPath.row]
         return cell
     }

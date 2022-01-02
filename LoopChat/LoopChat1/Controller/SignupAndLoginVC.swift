@@ -7,10 +7,12 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource{
     
     @IBOutlet weak var signupAndSigninCV: UICollectionView!
     
+    let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
         signupAndSigninCV.delegate = self
@@ -49,6 +51,7 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
         }
         return cell
     }
+    // MARK: @objc function
     /*  @objc func to make the slide motion */
     @objc func slideToSignUpCell(_ sender: UIButton){
         let path = IndexPath(row: 0, section: 0)
@@ -107,6 +110,7 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
             }
         }
     }
+    // function for showing error
     func showError(errorView:String){
         let alert = UIAlertController.init(title: "Error", message: errorView, preferredStyle: .alert)
         present(alert, animated: true)

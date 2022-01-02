@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRS-rd-iG0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5319" y="80"/>
+            <point key="canvasLocation" x="5532" y="425"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cnV-x6-Jh3">
@@ -124,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaW-2z-tlu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6377" y="80"/>
+            <point key="canvasLocation" x="6590" y="425"/>
         </scene>
         <!--Chat ScreentVC-->
         <scene sceneID="MgT-gc-ueM">
@@ -388,6 +388,61 @@
             </objects>
             <point key="canvasLocation" x="2434.7826086956525" y="79.6875"/>
         </scene>
+        <!--Create ScreenVC-->
+        <scene sceneID="Xpe-EZ-UMX">
+            <objects>
+                <viewController id="DGa-db-P4Z" customClass="CreateScreenVC" customModule="LoopChat1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sCA-yn-uGu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LhU-uF-CcS">
+                                <rect key="frame" x="75" y="148" width="264" height="227"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="227" id="3x0-cU-H2H"/>
+                                    <constraint firstAttribute="width" constant="264" id="5h7-l1-KLd"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sV5-xx-Kgb">
+                                <rect key="frame" x="20" y="496" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRc-6d-toL">
+                                <rect key="frame" x="119" y="609" width="177" height="58"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Add"/>
+                                <connections>
+                                    <action selector="createNewCommunityButton:" destination="DGa-db-P4Z" eventType="touchUpInside" id="1XO-BR-tPd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GNj-Mb-alh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GNj-Mb-alh" firstAttribute="bottom" secondItem="sV5-xx-Kgb" secondAttribute="bottom" constant="332" id="DU8-s6-xdP"/>
+                            <constraint firstItem="LhU-uF-CcS" firstAttribute="leading" secondItem="GNj-Mb-alh" secondAttribute="leading" constant="75" id="DVm-Lv-SUa"/>
+                            <constraint firstItem="IRc-6d-toL" firstAttribute="top" secondItem="sV5-xx-Kgb" secondAttribute="bottom" constant="79" id="EvK-jp-v0b"/>
+                            <constraint firstItem="IRc-6d-toL" firstAttribute="leading" secondItem="GNj-Mb-alh" secondAttribute="leading" constant="119" id="FNK-r2-yPf"/>
+                            <constraint firstItem="GNj-Mb-alh" firstAttribute="bottom" secondItem="IRc-6d-toL" secondAttribute="bottom" constant="195" id="Gi1-u8-bV3"/>
+                            <constraint firstItem="GNj-Mb-alh" firstAttribute="trailing" secondItem="LhU-uF-CcS" secondAttribute="trailing" constant="75" id="MGX-cv-GCK"/>
+                            <constraint firstItem="sV5-xx-Kgb" firstAttribute="leading" secondItem="GNj-Mb-alh" secondAttribute="leading" constant="20" id="X32-eG-mjf"/>
+                            <constraint firstItem="GNj-Mb-alh" firstAttribute="trailing" secondItem="sV5-xx-Kgb" secondAttribute="trailing" constant="20" id="ZIV-4i-Ynf"/>
+                            <constraint firstItem="LhU-uF-CcS" firstAttribute="top" secondItem="GNj-Mb-alh" secondAttribute="top" constant="60" id="cVg-Tr-Adc"/>
+                            <constraint firstItem="GNj-Mb-alh" firstAttribute="trailing" secondItem="IRc-6d-toL" secondAttribute="trailing" constant="118" id="eoH-yD-I6U"/>
+                            <constraint firstItem="sV5-xx-Kgb" firstAttribute="top" secondItem="LhU-uF-CcS" secondAttribute="bottom" constant="121" id="fAx-Ba-z6l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3MV-ej-njG"/>
+                    <connections>
+                        <outlet property="newCommunityImage" destination="LhU-uF-CcS" id="OeP-C4-Zj2"/>
+                        <outlet property="newCommunityName" destination="sV5-xx-Kgb" id="P7r-vB-9Gp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAK-YD-MpU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5531.884057971015" y="-218.30357142857142"/>
+        </scene>
         <!--CommunityVC-->
         <scene sceneID="pzT-pP-7ie">
             <objects>
@@ -454,11 +509,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="UVE-J6-hzm">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="poa-Wm-CZS">
-                            <connections>
-                                <segue destination="rTu-QX-y3D" kind="show" id="6Pa-FM-ETY"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="gearshape" catalog="system" id="poa-Wm-CZS">
+                                <connections>
+                                    <segue destination="rTu-QX-y3D" kind="show" id="6Pa-FM-ETY"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" id="goc-eC-jhG">
+                                <connections>
+                                    <segue destination="DGa-db-P4Z" kind="show" id="aVF-d9-Wtm"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="roomOfCommunityCV" destination="GG4-6a-BOO" id="ez6-vP-fAF"/>

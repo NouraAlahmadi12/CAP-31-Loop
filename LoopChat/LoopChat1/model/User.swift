@@ -7,11 +7,19 @@
 
 import Foundation
 import FirebaseFirestore
-struct User {
+import FirebaseFirestoreSwift
+struct User :Codable{
     let uid : String
     let userName : String
+    let userType : UserType
     let email : String
     let mood : Bool
-    let chat : DocumentReference
+    let community : [DocumentReference]
 }
+enum UserType : String, Codable {
+case admin = "admin"
+case developer = "developer"
+}
+
+
 

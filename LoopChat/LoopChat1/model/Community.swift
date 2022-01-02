@@ -7,11 +7,12 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 class Community {
     
     var communityName : String = ""
-    var communityID : String? = nil
-    var communityImage : UIImage? = nil
+    var communityID : String = ""
+    var communityImage : UIImage?
     var communityMember : [DocumentReference] = []
     var Message : [DocumentReference] = []
 }
