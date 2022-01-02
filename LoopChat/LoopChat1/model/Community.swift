@@ -17,9 +17,8 @@ class Community {
 }
 class Communitys: Community {
     
-    func createCommunity(name: String ,cImage: UIImage ){
+    func createCommunity(name: String){
         communityName = name
-        communityImage = cImage
     }
     
 }

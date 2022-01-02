@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		51055E40276F11F20093B8DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51055E3F276F11F20093B8DA /* GoogleService-Info.plist */; };
 		510EEA4D2771053000C1D669 /* UserCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510EEA4C2771053000C1D669 /* UserCVCell.swift */; };
-		513726FA277C7F1C00E94857 /* CommunityCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513726F8277C7F1C00E94857 /* CommunityCVCell.xib */; };
 		514A26DF27745CC50047865B /* SettignScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A26DE27745CC40047865B /* SettignScreenVC.swift */; };
 		514A26E327745D6F0047865B /* CommunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A26E227745D6F0047865B /* CommunityVC.swift */; };
+		516FD87B277EE5BE00F5AFCC /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516FD879277EE5BE00F5AFCC /* MessageCell.swift */; };
+		516FD87C277EE5BF00F5AFCC /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516FD87A277EE5BE00F5AFCC /* MessageCell.xib */; };
+		517B455B27817F7900C9CB0C /* CommunityCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B455A27817F7900C9CB0C /* CommunityCVCell.swift */; };
 		518BC43A276F102E00A7A3D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518BC439276F102E00A7A3D1 /* AppDelegate.swift */; };
 		518BC43C276F102E00A7A3D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518BC43B276F102E00A7A3D1 /* SceneDelegate.swift */; };
 		518BC441276F102E00A7A3D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 518BC43F276F102E00A7A3D1 /* Main.storyboard */; };
@@ -21,7 +23,6 @@
 		519BD559277C506300EBF334 /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519BD558277C506300EBF334 /* Community.swift */; };
 		519BD55B277C509C00EBF334 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519BD55A277C509C00EBF334 /* Message.swift */; };
 		519BD55D277C50BC00EBF334 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519BD55C277C50BC00EBF334 /* User.swift */; };
-		51D147F9277DC96A00DC82C2 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D147F8277DC96A00DC82C2 /* Helper.swift */; };
 		51DFF51227707585004CA002 /* SignupAndLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF51127707585004CA002 /* SignupAndLoginVC.swift */; };
 		B953F940DC4274D1E1382055 /* Pods_LoopChat1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6584EC13E020C3E3C878F6 /* Pods_LoopChat1.framework */; };
 /* End PBXBuildFile section */
@@ -31,9 +32,11 @@
 		3E6584EC13E020C3E3C878F6 /* Pods_LoopChat1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoopChat1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51055E3F276F11F20093B8DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		510EEA4C2771053000C1D669 /* UserCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCVCell.swift; sourceTree = "<group>"; };
-		513726F8277C7F1C00E94857 /* CommunityCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityCVCell.xib; sourceTree = "<group>"; };
 		514A26DE27745CC40047865B /* SettignScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettignScreenVC.swift; sourceTree = "<group>"; };
 		514A26E227745D6F0047865B /* CommunityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityVC.swift; sourceTree = "<group>"; };
+		516FD879277EE5BE00F5AFCC /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		516FD87A277EE5BE00F5AFCC /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		517B455A27817F7900C9CB0C /* CommunityCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCVCell.swift; sourceTree = "<group>"; };
 		518BC436276F102E00A7A3D1 /* LoopChat1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoopChat1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		518BC439276F102E00A7A3D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		518BC43B276F102E00A7A3D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +48,6 @@
 		519BD558277C506300EBF334 /* Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
 		519BD55A277C509C00EBF334 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		519BD55C277C50BC00EBF334 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		51D147F8277DC96A00DC82C2 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		51DFF51127707585004CA002 /* SignupAndLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAndLoginVC.swift; sourceTree = "<group>"; };
 		5E1D14C7C6EF73BC04BC0BF4 /* Pods-LoopChat1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopChat1.release.xcconfig"; path = "Target Support Files/Pods-LoopChat1/Pods-LoopChat1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				510EEA4C2771053000C1D669 /* UserCVCell.swift */,
+				516FD879277EE5BE00F5AFCC /* MessageCell.swift */,
+				517B455A27817F7900C9CB0C /* CommunityCVCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -112,8 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				518BC43F276F102E00A7A3D1 /* Main.storyboard */,
+				516FD87A277EE5BE00F5AFCC /* MessageCell.xib */,
 				518BC444276F103100A7A3D1 /* LaunchScreen.storyboard */,
-				513726F8277C7F1C00E94857 /* CommunityCVCell.xib */,
 			);
 			path = Storybord;
 			sourceTree = "<group>";
@@ -147,7 +151,6 @@
 				51D7DED22771EDE600568A57 /* media */,
 				518BC447276F103100A7A3D1 /* Info.plist */,
 				51055E3F276F11F20093B8DA /* GoogleService-Info.plist */,
-				51D147F8277DC96A00DC82C2 /* Helper.swift */,
 			);
 			path = LoopChat1;
 			sourceTree = "<group>";
@@ -230,9 +233,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				518BC446276F103100A7A3D1 /* LaunchScreen.storyboard in Resources */,
+				516FD87C277EE5BF00F5AFCC /* MessageCell.xib in Resources */,
 				51055E40276F11F20093B8DA /* GoogleService-Info.plist in Resources */,
 				518BC443276F103100A7A3D1 /* Assets.xcassets in Resources */,
-				513726FA277C7F1C00E94857 /* CommunityCVCell.xib in Resources */,
 				518BC441276F102E00A7A3D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,16 +289,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51D147F9277DC96A00DC82C2 /* Helper.swift in Sources */,
 				51963ADC277D9FB3004EC3B4 /* ChatScreentVC.swift in Sources */,
 				514A26E327745D6F0047865B /* CommunityVC.swift in Sources */,
 				518BC43A276F102E00A7A3D1 /* AppDelegate.swift in Sources */,
 				51DFF51227707585004CA002 /* SignupAndLoginVC.swift in Sources */,
+				516FD87B277EE5BE00F5AFCC /* MessageCell.swift in Sources */,
 				519BD55B277C509C00EBF334 /* Message.swift in Sources */,
 				518BC43C276F102E00A7A3D1 /* SceneDelegate.swift in Sources */,
 				510EEA4D2771053000C1D669 /* UserCVCell.swift in Sources */,
 				514A26DF27745CC50047865B /* SettignScreenVC.swift in Sources */,
 				519BD55D277C50BC00EBF334 /* User.swift in Sources */,
+				517B455B27817F7900C9CB0C /* CommunityCVCell.swift in Sources */,
 				519BD559277C506300EBF334 /* Community.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
