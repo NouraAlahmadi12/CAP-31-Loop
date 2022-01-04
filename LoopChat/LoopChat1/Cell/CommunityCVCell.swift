@@ -10,5 +10,8 @@ import UIKit
 class CommunityCVCell: UICollectionViewCell {
     @IBOutlet weak var communityImage: UIImageView!
     @IBOutlet weak var communityName: UILabel!
-
+    
+    func getInfo(community : Community){
+        communityName.text = community.communityName
+    }
 }

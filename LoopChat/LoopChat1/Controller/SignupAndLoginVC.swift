@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestoreSwift
 import FirebaseAuth
 class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource{
     
@@ -23,7 +24,6 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
     // MARK: CollectionView function
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return 2
     }
     
@@ -52,6 +52,7 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
         return cell
     }
     // MARK: @objc function
+    
     /*  @objc func to make the slide motion */
     @objc func slideToSignUpCell(_ sender: UIButton){
         let path = IndexPath(row: 0, section: 0)
@@ -79,13 +80,21 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if(error == nil){
                     print("sign up")
-                    let refrenceFromDatabase = Database.database().reference()
                     guard let userID = result?.user.uid , let userName = signupUserInfo.UserName.text else{
                         return
                     }
-                    let oneUser = refrenceFromDatabase.child("Users").child(userID)
-                    let userDataArray:[String : Any] = ["userName" : userName]
-                    oneUser.setValue(userDataArray)
+                    let user = User(uid: userID, userName: userName, userType: .developer , email: email , community: [])
+                    do{
+                        let docRef = self.db.collection("User").document(result!.user.uid)
+                        try docRef.setData(from: user.self)
+                    }catch{
+                        print(error.localizedDescription)
+                    }
+                    self.db.collection("User").document("GwVAzPj5ybpNLlGNL7mQ").getDocument { doc , error in
+                        if (error == nil){
+                            _ = try! doc?.data(as: User.self)
+                        }
+                    }
                 }
             }
         }
@@ -110,6 +119,7 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
             }
         }
     }
+    
     // function for showing error
     func showError(errorView:String){
         let alert = UIAlertController.init(title: "Error", message: errorView, preferredStyle: .alert)
