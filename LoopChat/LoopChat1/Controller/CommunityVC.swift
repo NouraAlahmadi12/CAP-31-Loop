@@ -12,15 +12,18 @@ class CommunityVC: UIViewController ,UICollectionViewDelegate , UICollectionView
     
     @IBOutlet weak var roomOfCommunityCV: UICollectionView!
     
+    var communityArr = CreateScreenVC().communities
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return communityArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = roomOfCommunityCV.dequeueReusableCell(withReuseIdentifier: "CommunityCellID", for: indexPath) as! CommunityCVCell
+        cell.getInfo(community: communityArr[indexPath.row])
         return cell
     }
-  
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = (storyboard?.instantiateViewController(withIdentifier: "ChatScreenID")) as! ChatScreentVC
         self.navigationController?.pushViewController(viewController, animated: true)
@@ -44,6 +47,7 @@ class CommunityVC: UIViewController ,UICollectionViewDelegate , UICollectionView
         super.viewDidLoad()
         roomOfCommunityCV.delegate = self
         roomOfCommunityCV.dataSource = self
+        roomOfCommunityCV.reloadData()
         
     }
 }

@@ -8,18 +8,11 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
-class Community {
+struct Community: Codable {
     
-    var communityName : String = ""
-    var communityID : String = ""
-    var communityImage : UIImage?
-    var communityMember : [DocumentReference] = []
-    var Message : [DocumentReference] = []
-}
-class Communitys: Community {
-    
-    func createCommunity(name: String){
-        communityName = name
-    }
-    
+    var communityName : String
+//    var communityID : String
+    //    var communityImage : UIImage?
+    var communityMember : [DocumentReference]
+    //    var Message : [DocumentReference] = []
 }

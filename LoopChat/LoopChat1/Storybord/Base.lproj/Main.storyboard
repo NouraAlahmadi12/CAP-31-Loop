@@ -498,8 +498,8 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="162" height="190"/>
                                         <connections>
-                                            <outlet property="communityImage" destination="uZD-QI-FKV" id="Im6-fD-ueP"/>
-                                            <outlet property="communityName" destination="oEs-xb-R2y" id="pCR-NV-wjn"/>
+                                            <outlet property="communityImage" destination="uZD-QI-FKV" id="beB-2D-yte"/>
+                                            <outlet property="communityName" destination="oEs-xb-R2y" id="Sw4-Ik-Wic"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

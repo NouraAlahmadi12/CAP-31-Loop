@@ -8,19 +8,20 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
-
 class CreateScreenVC: UIViewController {
-
+    
     @IBOutlet weak var newCommunityImage: UIImageView!
     @IBOutlet weak var newCommunityName: UITextField!
     
+    let db = Firestore.firestore()
+    var communities = [Community]()
     override func viewDidLoad() {
         super.viewDidLoad()
         observeCommunity()
     }
     @IBAction func createNewCommunityButton(_ sender: Any) {
         
-        guard let nameOfCommunity = newCommunityName.text , nameOfCommunity.isEmpty == false else{
+        guard let nameOfCommunity = newCommunityName.text , nameOfCommunity.isEmpty == false else {
             return
         }
         
@@ -35,10 +36,14 @@ class CreateScreenVC: UIViewController {
     
     func observeCommunity(){
         
-        let databaseRefrence = Database.database().reference()
-        databaseRefrence.child("communities").observe(.childAdded) { snapshot in
-            print("the room name is : \(snapshot)")
+        let databaseRef = Database.database().reference()
+        databaseRef.child("communities").observe(.childAdded){(snapshot) in
+            if let dataArray = snapshot.value as? [String: Any]{
+                if let communityName = dataArray["communitytName"] as? String{
+                    let community = Community.init(communityName: self.newCommunityName.text! , communityMember: [])
+                    self.communities.append(community)
+                }
+            }
         }
-        
     }
 }
