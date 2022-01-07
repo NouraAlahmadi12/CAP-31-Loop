@@ -397,14 +397,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LhU-uF-CcS">
-                                <rect key="frame" x="75" y="148" width="264" height="227"/>
+                                <rect key="frame" x="75" y="104" width="264" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="227" id="3x0-cU-H2H"/>
                                     <constraint firstAttribute="width" constant="264" id="5h7-l1-KLd"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sV5-xx-Kgb">
-                                <rect key="frame" x="20" y="496" width="374" height="34"/>
+                                <rect key="frame" x="20" y="452" width="374" height="78"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -412,9 +412,6 @@
                                 <rect key="frame" x="119" y="609" width="177" height="58"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Add"/>
-                                <connections>
-                                    <action selector="createNewCommunityButton:" destination="DGa-db-P4Z" eventType="touchUpInside" id="1XO-BR-tPd"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GNj-Mb-alh"/>
@@ -434,10 +431,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3MV-ej-njG"/>
-                    <connections>
-                        <outlet property="newCommunityImage" destination="LhU-uF-CcS" id="OeP-C4-Zj2"/>
-                        <outlet property="newCommunityName" destination="sV5-xx-Kgb" id="P7r-vB-9Gp"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAK-YD-MpU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -451,35 +444,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GG4-6a-BOO">
-                                <rect key="frame" x="0.0" y="137" width="414" height="725"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Community Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a6z-P9-tVE">
+                                <rect key="frame" x="3" y="83" width="305" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kfR-Mf-sAS">
+                                <rect key="frame" x="0.0" y="123" width="414" height="739"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zGW-TR-JB9">
-                                    <size key="itemSize" width="162" height="190"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CommunityCellID" id="MJx-gE-vhR" customClass="CommunityCVCell" customModule="LoopChat1" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="162" height="190"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="b9s-y2-XxD">
-                                            <rect key="frame" x="0.0" y="0.0" width="162" height="190"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommunityCellID" rowHeight="56" id="i4Z-V4-SZr" customClass="CommunityTVC" customModule="LoopChat1" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i4Z-V4-SZr" id="YrY-My-H5l">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uZD-QI-FKV">
-                                                    <rect key="frame" x="0.0" y="0.0" width="162" height="190"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1C-tx-KXd">
+                                                    <rect key="frame" x="37" y="5" width="357" height="46"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="182" id="8cW-Dx-ORq"/>
-                                                        <constraint firstAttribute="width" constant="162" id="Hdn-Yg-L1t"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEs-xb-R2y">
-                                                    <rect key="frame" x="5" y="163" width="152" height="19"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="19" id="50f-hi-P2X"/>
+                                                        <constraint firstAttribute="height" constant="43" id="yPw-zt-ywq"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -487,48 +471,58 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="uZD-QI-FKV" firstAttribute="top" secondItem="b9s-y2-XxD" secondAttribute="top" id="WXY-Ny-O1k"/>
-                                                <constraint firstAttribute="trailing" secondItem="uZD-QI-FKV" secondAttribute="trailing" id="aQy-qr-gUs"/>
-                                                <constraint firstItem="oEs-xb-R2y" firstAttribute="top" secondItem="uZD-QI-FKV" secondAttribute="bottom" constant="-27" id="fGu-Wf-B4d"/>
-                                                <constraint firstAttribute="trailing" secondItem="oEs-xb-R2y" secondAttribute="trailing" constant="5" id="lhu-vD-q0v"/>
-                                                <constraint firstItem="oEs-xb-R2y" firstAttribute="leading" secondItem="b9s-y2-XxD" secondAttribute="leading" constant="5" id="n9T-oj-COb"/>
-                                                <constraint firstAttribute="bottom" secondItem="uZD-QI-FKV" secondAttribute="bottom" id="noV-tl-pGT"/>
-                                                <constraint firstItem="uZD-QI-FKV" firstAttribute="leading" secondItem="b9s-y2-XxD" secondAttribute="leading" id="rPK-dQ-IBS"/>
+                                                <constraint firstItem="e1C-tx-KXd" firstAttribute="leading" secondItem="YrY-My-H5l" secondAttribute="leading" constant="37" id="9JB-rE-9IQ"/>
+                                                <constraint firstItem="e1C-tx-KXd" firstAttribute="top" secondItem="YrY-My-H5l" secondAttribute="top" constant="5" id="IuF-vb-DVC"/>
+                                                <constraint firstAttribute="bottom" secondItem="e1C-tx-KXd" secondAttribute="bottom" constant="5" id="jfJ-Ue-kN8"/>
+                                                <constraint firstAttribute="trailing" secondItem="e1C-tx-KXd" secondAttribute="trailing" constant="20" symbolic="YES" id="lk7-Rp-ihR"/>
                                             </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="162" height="190"/>
+                                        </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="communityImage" destination="uZD-QI-FKV" id="beB-2D-yte"/>
-                                            <outlet property="communityName" destination="oEs-xb-R2y" id="Sw4-Ik-Wic"/>
+                                            <outlet property="communityName" destination="e1C-tx-KXd" id="3tz-dJ-4sd"/>
                                         </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3X-c6-Y7l">
+                                <rect key="frame" x="311" y="86" width="93" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Add"/>
+                                <connections>
+                                    <action selector="createNewCommunityButton:" destination="ik5-Tf-FVr" eventType="touchUpInside" id="EpM-tt-Cdt"/>
+                                    <action selector="createNewCommunityButton:" destination="DGa-db-P4Z" eventType="touchUpInside" id="NsO-gY-EPs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8G2-sJ-KUD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8G2-sJ-KUD" firstAttribute="top" secondItem="a6z-P9-tVE" secondAttribute="top" constant="5" id="8I7-Bt-UU8"/>
+                            <constraint firstItem="a6z-P9-tVE" firstAttribute="leading" secondItem="8G2-sJ-KUD" secondAttribute="leading" constant="3" id="Cw3-KT-IhA"/>
+                            <constraint firstItem="8G2-sJ-KUD" firstAttribute="trailing" secondItem="v3X-c6-Y7l" secondAttribute="trailing" constant="10" id="JgT-er-WWk"/>
+                            <constraint firstItem="kfR-Mf-sAS" firstAttribute="trailing" secondItem="8G2-sJ-KUD" secondAttribute="trailing" id="Wvf-af-tuw"/>
+                            <constraint firstItem="kfR-Mf-sAS" firstAttribute="top" secondItem="a6z-P9-tVE" secondAttribute="bottom" constant="6" id="ZBc-tV-o90"/>
+                            <constraint firstItem="8G2-sJ-KUD" firstAttribute="trailing" secondItem="a6z-P9-tVE" secondAttribute="trailing" constant="106" id="end-YJ-1p6"/>
+                            <constraint firstItem="kfR-Mf-sAS" firstAttribute="top" secondItem="v3X-c6-Y7l" secondAttribute="bottom" constant="6" id="fYd-75-HRW"/>
+                            <constraint firstItem="v3X-c6-Y7l" firstAttribute="leading" secondItem="a6z-P9-tVE" secondAttribute="trailing" constant="3" id="j6l-iM-d7S"/>
+                            <constraint firstItem="kfR-Mf-sAS" firstAttribute="bottom" secondItem="8G2-sJ-KUD" secondAttribute="bottom" id="kQn-8r-t3z"/>
+                            <constraint firstItem="kfR-Mf-sAS" firstAttribute="leading" secondItem="8G2-sJ-KUD" secondAttribute="leading" id="y7Z-Me-J6F"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UVE-J6-hzm">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="gearshape" catalog="system" id="poa-Wm-CZS">
-                                <connections>
-                                    <segue destination="rTu-QX-y3D" kind="show" id="6Pa-FM-ETY"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" id="goc-eC-jhG">
-                                <connections>
-                                    <segue destination="DGa-db-P4Z" kind="show" id="aVF-d9-Wtm"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="poa-Wm-CZS">
+                            <connections>
+                                <segue destination="rTu-QX-y3D" kind="show" id="6Pa-FM-ETY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="roomOfCommunityCV" destination="GG4-6a-BOO" id="ez6-vP-fAF"/>
+                        <outlet property="CommunityTableView" destination="kfR-Mf-sAS" id="t9A-fN-xuD"/>
+                        <outlet property="newCommunityName" destination="a6z-P9-tVE" id="5ne-w4-5bH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S52-fD-aYp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4291" y="80"/>
+            <point key="canvasLocation" x="4288.4057971014499" y="79.6875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lPI-gN-38w">

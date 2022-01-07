@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510523AC2786D202005B42FD /* CommunityTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510523AB2786D202005B42FD /* CommunityTVC.swift */; };
 		51055E40276F11F20093B8DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51055E3F276F11F20093B8DA /* GoogleService-Info.plist */; };
 		510EEA4D2771053000C1D669 /* UserCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510EEA4C2771053000C1D669 /* UserCVCell.swift */; };
 		514A26DF27745CC50047865B /* SettignScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A26DE27745CC40047865B /* SettignScreenVC.swift */; };
 		514A26E327745D6F0047865B /* CommunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A26E227745D6F0047865B /* CommunityVC.swift */; };
-		515147CD2782185C003FC2A0 /* CreateScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515147CC2782185C003FC2A0 /* CreateScreenVC.swift */; };
 		516FD87B277EE5BE00F5AFCC /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516FD879277EE5BE00F5AFCC /* MessageCell.swift */; };
 		516FD87C277EE5BF00F5AFCC /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516FD87A277EE5BE00F5AFCC /* MessageCell.xib */; };
-		517B455B27817F7900C9CB0C /* CommunityCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B455A27817F7900C9CB0C /* CommunityCVCell.swift */; };
 		518BC43A276F102E00A7A3D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518BC439276F102E00A7A3D1 /* AppDelegate.swift */; };
 		518BC43C276F102E00A7A3D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518BC43B276F102E00A7A3D1 /* SceneDelegate.swift */; };
 		518BC441276F102E00A7A3D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 518BC43F276F102E00A7A3D1 /* Main.storyboard */; };
@@ -31,14 +30,13 @@
 /* Begin PBXFileReference section */
 		0CD968236B638195AED98F23 /* Pods-LoopChat1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopChat1.debug.xcconfig"; path = "Target Support Files/Pods-LoopChat1/Pods-LoopChat1.debug.xcconfig"; sourceTree = "<group>"; };
 		3E6584EC13E020C3E3C878F6 /* Pods_LoopChat1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoopChat1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		510523AB2786D202005B42FD /* CommunityTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTVC.swift; sourceTree = "<group>"; };
 		51055E3F276F11F20093B8DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		510EEA4C2771053000C1D669 /* UserCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCVCell.swift; sourceTree = "<group>"; };
 		514A26DE27745CC40047865B /* SettignScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettignScreenVC.swift; sourceTree = "<group>"; };
 		514A26E227745D6F0047865B /* CommunityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityVC.swift; sourceTree = "<group>"; };
-		515147CC2782185C003FC2A0 /* CreateScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenVC.swift; sourceTree = "<group>"; };
 		516FD879277EE5BE00F5AFCC /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		516FD87A277EE5BE00F5AFCC /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
-		517B455A27817F7900C9CB0C /* CommunityCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCVCell.swift; sourceTree = "<group>"; };
 		518BC436276F102E00A7A3D1 /* LoopChat1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoopChat1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		518BC439276F102E00A7A3D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		518BC43B276F102E00A7A3D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +69,7 @@
 			children = (
 				510EEA4C2771053000C1D669 /* UserCVCell.swift */,
 				516FD879277EE5BE00F5AFCC /* MessageCell.swift */,
-				517B455A27817F7900C9CB0C /* CommunityCVCell.swift */,
+				510523AB2786D202005B42FD /* CommunityTVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -110,7 +108,6 @@
 				514A26DE27745CC40047865B /* SettignScreenVC.swift */,
 				514A26E227745D6F0047865B /* CommunityVC.swift */,
 				51963ADB277D9FB3004EC3B4 /* ChatScreentVC.swift */,
-				515147CC2782185C003FC2A0 /* CreateScreenVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -302,9 +299,8 @@
 				510EEA4D2771053000C1D669 /* UserCVCell.swift in Sources */,
 				514A26DF27745CC50047865B /* SettignScreenVC.swift in Sources */,
 				519BD55D277C50BC00EBF334 /* User.swift in Sources */,
-				515147CD2782185C003FC2A0 /* CreateScreenVC.swift in Sources */,
-				517B455B27817F7900C9CB0C /* CommunityCVCell.swift in Sources */,
 				519BD559277C506300EBF334 /* Community.swift in Sources */,
+				510523AC2786D202005B42FD /* CommunityTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
