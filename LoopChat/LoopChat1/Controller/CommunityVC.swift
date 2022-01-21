@@ -7,45 +7,34 @@
 
 import UIKit
 import Firebase
-import FirebaseFirestore
 import FirebaseFirestoreSwift
-class CommunityVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
-    
+class CommunityVC: UIViewController{
+   
     let db = Firestore.firestore()
-    var communities = [Community]()
+    let databaseRef = Database.database().reference()
+    var arrayOfCommunities = [Community]()
     
-    @IBOutlet weak var newCommunityName: UITextField!
-    @IBOutlet weak var CommunityTableView: UITableView!
-    
-    @IBAction func createNewCommunityButton(_ sender: Any) {
-        
-        guard let nameOfCommunity = newCommunityName.text , nameOfCommunity.isEmpty == false else {
-            return
-        }
-        
-        let databaseRefrence = Database.database().reference()
-        let communities = databaseRefrence.child("communities").childByAutoId()
-        
-        let dataArray: [String : Any] = ["Community Name": nameOfCommunity]
-        communities.setValue(dataArray) { error, ref in
-            self.newCommunityName.text = ""
-        }
-    }
+    @IBOutlet weak var communityCV: UICollectionView!
     
     func observeCommunity(){
-        
-        let databaseRef = Database.database().reference()
         databaseRef.child("communities").observe(.childAdded){(snapshot) in
             print(snapshot)
             if let dataArray = snapshot.value as? [String: Any]{
-                if let communityName = dataArray["communitytName"] as? String{
-                    let community = Community.init(communityName: self.newCommunityName.text! , communityMember: [])
-                    self.communities.append(community)
-                    self.CommunityTableView.reloadData()
+                if let communityName = dataArray["Community Name"] as? String{
+                    let community = Community.init(communityName: communityName, communityMember: [])
+                    self.arrayOfCommunities.append(community)
                 }
+                self.communityCV.reloadData()
             }
         }
     }
+    
+    @IBAction func deleteCommunity(_ sender: Any) {
+        databaseRef.child("communities").removeValue()
+        arrayOfCommunities.removeAll()
+        communityCV.reloadData()
+    }
+    
     
     func presentLoginScreen (){
         let viewController = storyboard?.instantiateViewController(withIdentifier: "LoginScreenID") as! SignupAndLoginVC
@@ -53,29 +42,40 @@ class CommunityVC: UIViewController , UITableViewDataSource , UITableViewDelegat
         self.navigationController?.showDetailViewController(viewController, sender: self)
     }
     
-    
-    // MARK: tableView
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return communities.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = CommunityTableView.dequeueReusableCell(withIdentifier: "CommunityCellID", for: indexPath) as! CommunityTVC
-        cell.communityName.text = communities[indexPath.row].communityName
-        return cell
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        CommunityTableView.delegate = self
-        CommunityTableView.dataSource = self
+        communityCV.delegate = self
+        communityCV.dataSource = self
         observeCommunity()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        print("iam here ")
+        print("...............this is the array of community...............\(self.arrayOfCommunities.count)")
         let currentUser = Auth.auth().currentUser
         if (currentUser?.uid == nil ) {
             presentLoginScreen()
         }
+    }
+}
+
+
+// MARK: collectionView
+
+extension CommunityVC: UICollectionViewDataSource , UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrayOfCommunities.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = communityCV.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+        let item = arrayOfCommunities[indexPath.row]
+        cell.communityNameView.text = item.communityName
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = (storyboard?.instantiateViewController(withIdentifier: "ChatScreenID")) as! ChatScreentVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>699453012981-kvkjrjdl7niqnl8r73ar8rvn6360fk34.apps.googleusercontent.com</string>
+	<string>814752128573-urrnr5s5l2122n236lcvle8c781jb04n.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.699453012981-kvkjrjdl7niqnl8r73ar8rvn6360fk34</string>
+	<string>com.googleusercontent.apps.814752128573-urrnr5s5l2122n236lcvle8c781jb04n</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCc8fE1-MuXpjr-t7hG9E7gdez0M88vedM</string>
+	<string>AIzaSyBLRNm-RVJzLh6ulcv16dxTYfijUJRoFaI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>699453012981</string>
+	<string>814752128573</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>T.LoopChat</string>
 	<key>PROJECT_ID</key>
-	<string>loopchat-118e2</string>
+	<string>cap-firebase</string>
 	<key>STORAGE_BUCKET</key>
-	<string>loopchat-118e2.appspot.com</string>
+	<string>cap-firebase.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:699453012981:ios:d44514734f6520d60dbebc</string>
+	<string>1:814752128573:ios:3962e9679023a03ad69454</string>
 </dict>
 </plist>
