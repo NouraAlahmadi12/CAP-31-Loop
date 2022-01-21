@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseFirestoreSwift
 import FirebaseAuth
-class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource{
+class SignupAndLoginVC: UIViewController {
     
     @IBOutlet weak var signupAndSigninCV: UICollectionView!
     
@@ -21,36 +21,6 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
         signupAndSigninCV.isScrollEnabled = false
     }
     
-    // MARK: CollectionView function
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.signupAndSigninCV.dequeueReusableCell(withReuseIdentifier: "HomeCellID", for: indexPath) as! UserCVCell
-        /* Log in cell */
-        if(indexPath.row == 0){
-            cell.confirmPassword.isHidden = true
-            cell.UserName.isHidden = true
-            cell.statusLabel.text = "Don't have an account ?"
-            cell.actionButton.setTitle("Sign in", for: .normal)
-            cell.slideButton.setTitle("Join Us..!", for: .normal)
-            cell.actionButton.addTarget(self, action: #selector(loginButtonAction(_:)), for: .touchUpInside)
-            cell.slideButton.addTarget(self, action: #selector(slideToLogInCell(_:)), for: .touchUpInside)
-            
-            /* Sign up cell */
-        }else{
-            cell.confirmPassword.isHidden = false
-            cell.email.isHidden = false
-            cell.statusLabel.text = "Already have an account ?"
-            cell.actionButton.setTitle("Ready to go..", for: .normal)
-            cell.slideButton.setTitle("Sign in", for: .normal)
-            cell.slideButton.addTarget(self, action: #selector(slideToSignUpCell(_:)), for: .touchUpInside)
-            cell.actionButton.addTarget(self, action: #selector(signupButtonAction(_:)), for: .touchUpInside)
-        }
-        return cell
-    }
     // MARK: @objc function
     
     /*  @objc func to make the slide motion */
@@ -126,5 +96,39 @@ class SignupAndLoginVC: UIViewController , UICollectionViewDelegate , UICollecti
         present(alert, animated: true)
         let button = UIAlertAction.init(title: "OK", style: .default, handler: nil)
         alert.addAction(button)
+    }
+}
+
+extension SignupAndLoginVC: UICollectionViewDelegate , UICollectionViewDataSource{
+    
+    // MARK: CollectionView function
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = self.signupAndSigninCV.dequeueReusableCell(withReuseIdentifier: "HomeCellID", for: indexPath) as! UserCVCell
+        /* Log in cell */
+        if(indexPath.row == 0){
+            cell.confirmPassword.isHidden = true
+            cell.UserName.isHidden = true
+            cell.statusLabel.text = "Don't have an account ?"
+            cell.actionButton.setTitle("Sign in", for: .normal)
+            cell.slideButton.setTitle("Join Us..!", for: .normal)
+            cell.actionButton.addTarget(self, action: #selector(loginButtonAction(_:)), for: .touchUpInside)
+            cell.slideButton.addTarget(self, action: #selector(slideToLogInCell(_:)), for: .touchUpInside)
+            
+            /* Sign up cell */
+        }else{
+            cell.confirmPassword.isHidden = false
+            cell.email.isHidden = false
+            cell.statusLabel.text = "Already have an account ?"
+            cell.actionButton.setTitle("Ready to go..", for: .normal)
+            cell.slideButton.setTitle("Sign in", for: .normal)
+            cell.slideButton.addTarget(self, action: #selector(slideToSignUpCell(_:)), for: .touchUpInside)
+            cell.actionButton.addTarget(self, action: #selector(signupButtonAction(_:)), for: .touchUpInside)
+        }
+        return cell
     }
 }

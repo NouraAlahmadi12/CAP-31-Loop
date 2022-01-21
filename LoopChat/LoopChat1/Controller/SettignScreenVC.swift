@@ -27,9 +27,8 @@ class SettignScreenVC: UIViewController {
     
     func presentLoginScreen (){
         self.navigationController?.popToRootViewController(animated: true)
-    }    
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }
