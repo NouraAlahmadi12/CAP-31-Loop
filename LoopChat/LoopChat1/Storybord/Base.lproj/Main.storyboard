@@ -159,6 +159,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzM-ss-Pe7">
+                                <rect key="frame" x="338" y="830" width="69" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="kC6-n0-g2e"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.forward.circle.fill" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="sendMessageAction:" destination="Q0C-uA-gxX" eventType="touchUpInside" id="uEC-xP-rLb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Yo-5p-iwV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -166,6 +177,7 @@
                             <constraint firstItem="8bt-5H-vU1" firstAttribute="centerX" secondItem="sgm-tW-b4Z" secondAttribute="centerX" id="1TJ-yj-YkM"/>
                             <constraint firstItem="3Yo-5p-iwV" firstAttribute="trailing" secondItem="sgm-tW-b4Z" secondAttribute="trailing" id="1VB-wh-5Y4"/>
                             <constraint firstItem="sgm-tW-b4Z" firstAttribute="top" secondItem="3Yo-5p-iwV" secondAttribute="top" id="70w-G1-PfH"/>
+                            <constraint firstItem="3Yo-5p-iwV" firstAttribute="trailing" secondItem="EzM-ss-Pe7" secondAttribute="trailing" constant="7" id="9AG-cJ-Xuy"/>
                             <constraint firstItem="3Yo-5p-iwV" firstAttribute="bottom" secondItem="sgm-tW-b4Z" secondAttribute="bottom" constant="37" id="ASa-Hu-Rf0"/>
                             <constraint firstItem="sgm-tW-b4Z" firstAttribute="leading" secondItem="3Yo-5p-iwV" secondAttribute="leading" id="BJR-xY-Laf"/>
                             <constraint firstItem="D6L-0M-7Sa" firstAttribute="bottom" secondItem="3Yo-5p-iwV" secondAttribute="bottom" id="EuQ-aK-6wy"/>
@@ -173,17 +185,20 @@
                             <constraint firstItem="8bt-5H-vU1" firstAttribute="top" secondItem="xve-XR-RFd" secondAttribute="topMargin" constant="-44" id="QSt-OJ-Ahh"/>
                             <constraint firstItem="sgm-tW-b4Z" firstAttribute="top" secondItem="8bt-5H-vU1" secondAttribute="bottom" constant="3" id="fNn-ac-rKB"/>
                             <constraint firstItem="D6L-0M-7Sa" firstAttribute="leading" secondItem="3Yo-5p-iwV" secondAttribute="leading" id="ncH-p6-ex7"/>
+                            <constraint firstItem="3Yo-5p-iwV" firstAttribute="bottom" secondItem="EzM-ss-Pe7" secondAttribute="bottom" constant="1" id="uzy-XK-Am6"/>
+                            <constraint firstItem="EzM-ss-Pe7" firstAttribute="leading" secondItem="D6L-0M-7Sa" secondAttribute="trailing" id="wVQ-X1-YOY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rNG-9n-d1y"/>
                     <connections>
                         <outlet property="chatTableView" destination="sgm-tW-b4Z" id="log-V7-EWf"/>
                         <outlet property="messageTextField" destination="D6L-0M-7Sa" id="KYi-Iw-5jO"/>
+                        <outlet property="sendMessageOutlet" destination="EzM-ss-Pe7" id="CcK-0w-aoY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHe-3o-07N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4288" y="745"/>
+            <point key="canvasLocation" x="4286.9565217391309" y="744.64285714285711"/>
         </scene>
         <!--Signup And LoginVC-->
         <scene sceneID="84J-A4-QOD">
@@ -560,6 +575,7 @@
     </scenes>
     <resources>
         <image name="SwiftCommunity" width="1138" height="1024"/>
+        <image name="arrow.forward.circle.fill" catalog="system" width="128" height="121"/>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="highlighter" catalog="system" width="128" height="119"/>
