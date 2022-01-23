@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 class ChatScreentVC: UIViewController {
     
-    var messageArr = [Message]()
+    var messageArr : [Message] = []
     
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
@@ -22,7 +22,7 @@ class ChatScreentVC: UIViewController {
         sendMessageOutlet.isEnabled = false
         
         let messageDB = Database.database().reference().child("Messages")
-        let messageDict = ["Sender" : Auth.auth().currentUser?.email, "MessageBody" : messageTextField.text!]
+        let messageDict = ["MessageBody": messageTextField.text!,"Sender": Auth.auth().currentUser?.uid]
         messageDB.childByAutoId().setValue(messageDict){(error,ref) in
             if(error != nil){
                 print(error)
@@ -35,20 +35,23 @@ class ChatScreentVC: UIViewController {
         }
     }
     
-    func getMessages(){
-        let msgDB = Database.database().reference().child("Messages")
-        msgDB.observe(.childAdded) { (snapShot) in
+    func getMessage(){
+        let messagedb = Database.database().reference().child("Messages")
+        messagedb.observe(.childAdded) { snapShot in
             let value = snapShot.value as! Dictionary<String,String>
-            let text = value["MessageBody"]!
+            let textMessage = value["MessageBody"]!
             let sender = value["Sender"]!
-            var msg = Message(sender: sender, messageBody: text)
-            msg.messageBody = text
-            msg.sender = sender
-            self.messageArr.append(msg)
-            debugPrint(self.messageArr.count)
+            
+            debugPrint(sender)
+            
+            var message = Message(sender: sender, messageBody: textMessage)
+            message.messageBody = textMessage
+            message.sender = sender
+            self.messageArr.append(message)
             self.chatTableView.reloadData()
         }
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,11 +60,12 @@ class ChatScreentVC: UIViewController {
         chatTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ChatCellID")
     }
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        getMessages()
+        getMessage()
     }
 }
 
+
+// MARK: tableView protocols
 extension ChatScreentVC: UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messageArr.count
