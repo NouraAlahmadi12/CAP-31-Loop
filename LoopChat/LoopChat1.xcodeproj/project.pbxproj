@@ -22,6 +22,7 @@
 		519BD559277C506300EBF334 /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519BD558277C506300EBF334 /* Community.swift */; };
 		519BD55B277C509C00EBF334 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519BD55A277C509C00EBF334 /* Message.swift */; };
 		519BD55D277C50BC00EBF334 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519BD55C277C50BC00EBF334 /* User.swift */; };
+		51A11A78279E8350002E2427 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A11A77279E8350002E2427 /* UserProfileVC.swift */; };
 		51D678102799634200E07ACD /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6780F2799634200E07ACD /* CollectionViewCell.swift */; };
 		51D678122799655A00E07ACD /* CreateCommunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D678112799655A00E07ACD /* CreateCommunityVC.swift */; };
 		51DFF51227707585004CA002 /* SignupAndLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF51127707585004CA002 /* SignupAndLoginVC.swift */; };
@@ -48,6 +49,7 @@
 		519BD558277C506300EBF334 /* Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
 		519BD55A277C509C00EBF334 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		519BD55C277C50BC00EBF334 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		51A11A77279E8350002E2427 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		51D6780F2799634200E07ACD /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionViewCell.swift; path = LoopChat1/Cell/CollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		51D678112799655A00E07ACD /* CreateCommunityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCommunityVC.swift; sourceTree = "<group>"; };
 		51DFF51127707585004CA002 /* SignupAndLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAndLoginVC.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				514A26E227745D6F0047865B /* CommunityVC.swift */,
 				51D678112799655A00E07ACD /* CreateCommunityVC.swift */,
 				51963ADB277D9FB3004EC3B4 /* ChatScreentVC.swift */,
+				51A11A77279E8350002E2427 /* UserProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				519BD55B277C509C00EBF334 /* Message.swift in Sources */,
 				518BC43C276F102E00A7A3D1 /* SceneDelegate.swift in Sources */,
 				510EEA4D2771053000C1D669 /* UserCVCell.swift in Sources */,
+				51A11A78279E8350002E2427 /* UserProfileVC.swift in Sources */,
 				514A26DF27745CC50047865B /* SettignScreenVC.swift in Sources */,
 				519BD55D277C50BC00EBF334 /* User.swift in Sources */,
 				519BD559277C506300EBF334 /* Community.swift in Sources */,
@@ -486,7 +490,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XTCC8936T4;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoopChat1/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LoopChat;

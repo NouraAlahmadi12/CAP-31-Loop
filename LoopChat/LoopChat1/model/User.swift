@@ -12,12 +12,16 @@ import FirebaseFirestoreSwift
 struct User :Codable{
     let uid : String
     let userName : String
-    let userType : UserType
+//    let userType : UserType
     let email : String?
-    let community : [DocumentReference]
+    
+    func getDate()->[String:Any] {
+        return ["Name User":userName,"Email User":email,"ID User":uid]
+    }
 }
 
-enum UserType : Int, Codable {
-    case admin = 1
-    case developer = 2
-}
+//enum UserType : Int, Codable {
+//    case admin = 1
+//    case developer = 2
+//}
+
