@@ -10,45 +10,47 @@ import Firebase
 class ChatScreentVC: UIViewController {
     
     var messageArr : [Message] = []
+    var community : Community?
     
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
-    
     @IBOutlet weak var sendMessageOutlet: UIButton!
     @IBAction func sendMessageAction(_ sender: Any) {
-        
-        messageTextField.endEditing(true)
-        messageTextField.isEnabled = false
-        sendMessageOutlet.isEnabled = false
-        
-        let messageDB = Database.database().reference().child("Messages")
-        let messageDict = ["MessageBody": messageTextField.text!,"Sender": Auth.auth().currentUser?.uid]
-        messageDB.childByAutoId().setValue(messageDict){(error,ref) in
-            if(error != nil){
-                print(error)
-            }else{
-                debugPrint("Msg saved successfully")
-                self.messageTextField.isEnabled = true
-                self.sendMessageOutlet.isEnabled = true
-                self.messageTextField.text = nil
+        guard let chatTxt = self.messageTextField.text , chatTxt.isEmpty == false else { return }
+        sendMessage(text: chatTxt)
+    }
+    
+    
+    func sendMessage(text:String){
+        guard let userid = Auth.auth().currentUser?.uid else{return}
+        let databaseRef  = Database.database().reference()
+        if let communityid = self.community?.communityID {
+            print(communityid)
+            let dataArray: [String:Any] = ["SenderID": userid , "messageBody": text]
+            
+            let community = databaseRef.child("communities").child(communityid)
+            community.child("Messages").childByAutoId().setValue(dataArray) { error, ref in
+                if(error != nil){
+                    self.messageTextField.text = ""
+                }else{
+                    print("..........saved successfully..........")
+                }
             }
         }
     }
     
     func getMessage(){
-        let messagedb = Database.database().reference().child("Messages")
-        messagedb.observe(.childAdded) { snapShot in
-            let value = snapShot.value as! Dictionary<String,String>
-            let textMessage = value["MessageBody"]!
-            let sender = value["Sender"]!
-            
-            debugPrint(sender)
-            
-            var message = Message(sender: sender, messageBody: textMessage)
-            message.messageBody = textMessage
-            message.sender = sender
-            self.messageArr.append(message)
-            self.chatTableView.reloadData()
+        let databaseRef = Database.database().reference()
+        if let communityid = self.community?.communityID {
+            databaseRef.child("communities").child(communityid).child("Messages").observe(.childAdded) { snapShot in
+                if let dataArray = snapShot.value as? [String:Any] {
+                    if let messagBody = dataArray["messageBody"] as? String{
+                        let message = Message(senderID: snapShot.key , messageBody: messagBody)
+                        self.messageArr.append(message)
+                        self.chatTableView.reloadData()
+                    }
+                }
+            }
         }
     }
     
@@ -59,11 +61,14 @@ class ChatScreentVC: UIViewController {
         chatTableView.dataSource = self
         chatTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ChatCellID")
     }
+    
     override func viewDidAppear(_ animated: Bool) {
+        print("iam here ")
+        print("...............this is the array of message...............\(self.messageArr.count)")
         getMessage()
     }
+    
 }
-
 
 // MARK: tableView protocols
 extension ChatScreentVC: UITableViewDelegate , UITableViewDataSource{
@@ -74,8 +79,8 @@ extension ChatScreentVC: UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = chatTableView.dequeueReusableCell(withIdentifier: "ChatCellID") as! MessageCell
         cell.messageBody.text = messageArr[indexPath.row].messageBody
-        cell.userName.text = messageArr[indexPath.row].sender
-        cell.userImage.image = UIImage(named: "profilePic")
+        cell.userName.text = messageArr[indexPath.row].senderID
+        cell.layer.cornerRadius = 10
         return cell
     }
     

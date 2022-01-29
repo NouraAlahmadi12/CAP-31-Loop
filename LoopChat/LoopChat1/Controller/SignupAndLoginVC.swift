@@ -39,7 +39,7 @@ class SignupAndLoginVC: UIViewController {
         let path = IndexPath(row: 1, section: 0)
         signupAndSigninCV.scrollToItem(at: path, at: .centeredHorizontally, animated: true)
         let signupUserInfo = signupAndSigninCV.cellForItem(at: path) as! UserCVCell
-        guard let email = signupUserInfo.email.text , let password = signupUserInfo.password.text , let confirmPassword = signupUserInfo.confirmPassword.text else{
+        guard let email = signupUserInfo.email.text , let password = signupUserInfo.password.text , let confirmPassword = signupUserInfo.confirmPassword.text ,let userName = signupUserInfo.UserName.text else{
             return
         }
         if(email.isEmpty == true || password.isEmpty == true){
@@ -49,22 +49,12 @@ class SignupAndLoginVC: UIViewController {
         }else{
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if(error == nil){
-                    print("sign up")
-                    guard let userID = result?.user.uid , let userName = signupUserInfo.UserName.text else{
-                        return
-                    }
-                    let user = User(uid: userID, userName: userName, userType: .developer , email: email , community: [])
-                    do{
-                        let docRef = self.db.collection("User").document(result!.user.uid)
-                        try docRef.setData(from: user.self)
-                    }catch{
-                        print(error.localizedDescription)
-                    }
-                    self.db.collection("User").document("GwVAzPj5ybpNLlGNL7mQ").getDocument { doc , error in
-                        if (error == nil){
-                            _ = try! doc?.data(as: User.self)
-                        }
-                    }
+                    let userID = result?.user.uid
+
+                    let databaseRef = Database.database().reference()
+                    let user = databaseRef.child("Users").child(userID!)
+                    let dataArray: [String:Any] = ["userName":userName , "email": email , "userID":userID!]
+                    user.setValue(dataArray)
                 }
             }
         }
@@ -118,6 +108,7 @@ extension SignupAndLoginVC: UICollectionViewDelegate , UICollectionViewDataSourc
             cell.slideButton.setTitle("Join Us..!", for: .normal)
             cell.actionButton.addTarget(self, action: #selector(loginButtonAction(_:)), for: .touchUpInside)
             cell.slideButton.addTarget(self, action: #selector(slideToLogInCell(_:)), for: .touchUpInside)
+            cell.layer.cornerRadius = 30
             
             /* Sign up cell */
         }else{

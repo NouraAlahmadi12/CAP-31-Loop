@@ -10,5 +10,5 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 struct Community: Codable {
     var communityName : String
-    var communityMember : [DocumentReference]
+    var communityID : String
 }
