@@ -118,9 +118,26 @@
                                     <action selector="updateUserInfo:" destination="2gz-lH-fbz" eventType="touchUpInside" id="L4r-uz-T81"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWb-e9-3SP">
+                                <rect key="frame" x="121" y="721" width="172" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="G3z-dT-es6"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Delete Account"/>
+                                <connections>
+                                    <action selector="deleteUserAccount:" destination="2gz-lH-fbz" eventType="touchUpInside" id="cO8-qr-Do4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m8X-kK-DWS"/>
                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m8X-kK-DWS" firstAttribute="bottom" secondItem="fWb-e9-3SP" secondAttribute="bottom" constant="100" id="CiF-ea-cCr"/>
+                            <constraint firstItem="fWb-e9-3SP" firstAttribute="leading" secondItem="m8X-kK-DWS" secondAttribute="leading" constant="121" id="VZi-e3-fNv"/>
+                            <constraint firstItem="m8X-kK-DWS" firstAttribute="trailing" secondItem="fWb-e9-3SP" secondAttribute="trailing" constant="121" id="hhy-nK-AIQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fAa-J5-mut"/>
                     <connections>
@@ -131,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaW-2z-tlu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6590" y="425"/>
+            <point key="canvasLocation" x="6589.8550724637689" y="424.55357142857139"/>
         </scene>
         <!--Chat ScreentVC-->
         <scene sceneID="MgT-gc-ueM">
@@ -623,6 +640,9 @@
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -50,11 +50,19 @@ class SignupAndLoginVC: UIViewController {
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if(error == nil){
                     let userID = result?.user.uid
-
-                    let databaseRef = Database.database().reference()
-                    let user = databaseRef.child("Users").child(userID!)
-                    let dataArray: [String:Any] = ["userName":userName , "email": email , "userID":userID!]
-                    user.setValue(dataArray)
+                    let db = Firebase.Firestore.firestore()
+                    db.collection("Users").document(userID!).setData([
+                        "userName":userName,
+                        "email": email,
+                        "userID": userID!
+                    ]) { err in
+                        if let err = err {
+                            print("Error writing document: \(err)")
+                        } else {
+                            print("Document successfully written!")
+                        }
+                    }
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
         }

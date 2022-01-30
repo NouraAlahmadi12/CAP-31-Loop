@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 class UserProfileVC: UIViewController {
-
+    
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileUserName: UITextField!
@@ -17,24 +17,47 @@ class UserProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         getUserData()
     }
-    
-    
+        
     @IBAction func updateUserInfo(_ sender: Any) {
-        
-        
+        update()
     }
+    
+    @IBAction func deleteUserAccount(_ sender: Any) {
+        deleteAccount()
+    }
+    
+
+    func deleteAccount(){
+        let userid = Auth.auth().currentUser?.uid
+        db.collection("Users").document(userid!).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
+        let user = Auth.auth().currentUser
+        user?.delete { error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("successfully deleted ")
+                self.presentLoginScreen()
+            }
+        }
+    }
+    
     func update(){
         let userID = Auth.auth().currentUser?.uid
-//        Auth.auth().updateCurrentUser(User) { error in
-//            if error == nil{
-//
-//            }
-//        }
         db.collection("Users").document(userID!).updateData(([
-            "Name User": profileUserName.text!,
-            "Email User": profileEmail.text!
+            "userName": profileUserName.text!,
+            "email": profileEmail.text!
         ])) { error in
             if let error = error{
                 print("Error updating document: \(error)")
@@ -42,20 +65,29 @@ class UserProfileVC: UIViewController {
                 print("Document successfully updated!")
             }
         }
+        let user = Auth.auth().currentUser
+        user?.updateEmail(to: profileEmail.text!, completion: { error in
+            if error == nil{
+                print("successfully updated ")
+            }else{
+                print(error?.localizedDescription)}
+        })
     }
     
     func getUserData(){
         let userID = Auth.auth().currentUser?.uid
         db.collection("Users").document(userID!).getDocument { [self] snapshot, error in
-            let result = snapshot!.data() as! [String: Any]
+            let result = snapshot!.data()!
             let user = User(uid: userID!,
-                            userName: result["Name User"] as! String,
-                            email: result["Email User"] as! String
+                            userName: result["userName"] as! String,
+                            email: result["email"] as? String
             )
             self.profileUserName.text = user.userName
             self.profileEmail.text = user.email
         }
-        
+    }
+
+    func presentLoginScreen (){
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
-
