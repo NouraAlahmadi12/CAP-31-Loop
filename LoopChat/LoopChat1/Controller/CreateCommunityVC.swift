@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 let db = Firestore.firestore()
 
 class CreateCommunityVC: UIViewController {
-
+    
     @IBOutlet weak var addNewImage: UIImageView!
     @IBOutlet weak var addNewName: UITextField!
     

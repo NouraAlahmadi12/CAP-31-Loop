@@ -9,6 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 struct Message {
+    var senderName: String
     var senderID : String
     var messageBody : String
 }

@@ -10,53 +10,65 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCellID" rowHeight="66" id="KGk-i7-Jjw" customClass="MessageCell" customModule="LoopChat1" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="475" height="66"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCellID" rowHeight="83" id="KGk-i7-Jjw" customClass="MessageCell" customModule="LoopChat1" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="475" height="83"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="475" height="66"/>
+                <rect key="frame" x="0.0" y="0.0" width="475" height="83"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="I5T-GU-9ta">
-                        <rect key="frame" x="0.0" y="0.0" width="475" height="66"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="I5T-GU-9ta">
+                        <rect key="frame" x="10" y="10" width="455" height="63"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ylp-T0-6V1">
-                                <rect key="frame" x="0.0" y="0.0" width="475" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="0.0" y="0.0" width="62" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="hello" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5bM-hl-vBX">
-                                <rect key="frame" x="0.0" y="20.5" width="475" height="45.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXw-Mc-zAk">
+                                <rect key="frame" x="0.0" y="18" width="85" height="45"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Hello" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5bM-hl-vBX">
+                                        <rect key="frame" x="6" y="0.0" width="73" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="I6G-JM-zSz"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5bM-hl-vBX" firstAttribute="top" secondItem="FXw-Mc-zAk" secondAttribute="top" id="8gC-fM-5CI"/>
+                                    <constraint firstAttribute="bottom" secondItem="5bM-hl-vBX" secondAttribute="bottom" id="QEU-M4-c6z"/>
+                                    <constraint firstAttribute="trailing" secondItem="5bM-hl-vBX" secondAttribute="trailing" constant="6" id="tah-gL-vTS"/>
+                                    <constraint firstItem="5bM-hl-vBX" firstAttribute="leading" secondItem="FXw-Mc-zAk" secondAttribute="leading" constant="6" id="yjg-0s-97K"/>
+                                </constraints>
+                            </view>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="I5T-GU-9ta" secondAttribute="bottom" id="R0b-Wp-qVi"/>
-                    <constraint firstItem="I5T-GU-9ta" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jVM-Jv-6uo"/>
-                    <constraint firstItem="I5T-GU-9ta" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kAw-KW-Zt6"/>
-                    <constraint firstAttribute="trailing" secondItem="I5T-GU-9ta" secondAttribute="trailing" id="wra-cb-BQ7"/>
+                    <constraint firstAttribute="bottom" secondItem="I5T-GU-9ta" secondAttribute="bottom" constant="10" id="R0b-Wp-qVi"/>
+                    <constraint firstItem="I5T-GU-9ta" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="jVM-Jv-6uo"/>
+                    <constraint firstItem="I5T-GU-9ta" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="kAw-KW-Zt6"/>
+                    <constraint firstAttribute="trailing" secondItem="I5T-GU-9ta" secondAttribute="trailing" constant="10" id="wra-cb-BQ7"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="messageBody" destination="5bM-hl-vBX" id="0W8-Wd-QWV"/>
+                <outlet property="messageBubble" destination="FXw-Mc-zAk" id="pin-65-rNs"/>
+                <outlet property="messageStack" destination="I5T-GU-9ta" id="HIl-cr-fPV"/>
                 <outlet property="userName" destination="Ylp-T0-6V1" id="wym-uE-eum"/>
             </connections>
-            <point key="canvasLocation" x="-233" y="125"/>
+            <point key="canvasLocation" x="-311" y="111"/>
         </tableViewCell>
     </objects>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

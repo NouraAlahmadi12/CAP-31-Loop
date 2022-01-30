@@ -23,7 +23,7 @@ class UserProfileVC: UIViewController {
         super.viewDidAppear(animated)
         getUserData()
     }
-        
+    
     @IBAction func updateUserInfo(_ sender: Any) {
         update()
     }
@@ -32,25 +32,36 @@ class UserProfileVC: UIViewController {
         deleteAccount()
     }
     
-
+    
     func deleteAccount(){
-        let userid = Auth.auth().currentUser?.uid
-        db.collection("Users").document(userid!).delete() { err in
-            if let err = err {
-                print("Error removing document: \(err)")
-            } else {
-                print("Document successfully removed!")
+        let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this Account?", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: { (action) -> Void in
+            print("cancel button tapped")
+        })
+        let yes = UIAlertAction(title: "Yes", style: .cancel) { (action) -> Void in
+            
+            let userid = Auth.auth().currentUser?.uid
+            db.collection("Users").document(userid!).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
+            let user = Auth.auth().currentUser
+            user?.delete { error in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    print("successfully deleted ")
+                    self.presentLoginScreen()
+                }
             }
         }
-        let user = Auth.auth().currentUser
-        user?.delete { error in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                print("successfully deleted ")
-                self.presentLoginScreen()
-            }
-        }
+        alert.addAction(yes)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     func update(){
@@ -86,7 +97,7 @@ class UserProfileVC: UIViewController {
             self.profileEmail.text = user.email
         }
     }
-
+    
     func presentLoginScreen (){
         self.navigationController?.popToRootViewController(animated: true)
     }
