@@ -105,65 +105,6 @@
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
-    },
-    {
-      "filename" : "Icon-iPadPro@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "Icon-Spotlight-40.png",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "size" : "40x40"
-    },
-    {
-      "filename" : "Icon-Small-50.png",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "size" : "50x50"
-    },
-    {
-      "filename" : "Icon-Small-50@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x",
-      "size" : "50x50"
-    },
-    {
-      "filename" : "Icon-60.png",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "size" : "60x60"
-    },
-    {
-      "filename" : "Icon-72.png",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "size" : "72x72"
-    },
-    {
-      "filename" : "Icon-72@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x",
-      "size" : "72x72"
-    },
-    {
-      "filename" : "Icon-76.png",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "size" : "76x76"
-    },
-    {
-      "filename" : "Icon-76@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x",
-      "size" : "76x76"
-    },
-    {
-      "filename" : "Icon-76@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x",
-      "size" : "76x76"
     }
   ],
   "info" : {
