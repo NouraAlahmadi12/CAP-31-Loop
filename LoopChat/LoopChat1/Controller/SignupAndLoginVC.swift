@@ -21,6 +21,11 @@ class SignupAndLoginVC: UIViewController {
         signupAndSigninCV.isScrollEnabled = false
     }
     
+    @IBAction func forgetPasswordAction(_ sender: Any) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MoveToForgetPassword")
+        present(vc, animated: true, completion: nil)
+    }
     // MARK: @objc function
     
     /*  @objc func to make the slide motion */

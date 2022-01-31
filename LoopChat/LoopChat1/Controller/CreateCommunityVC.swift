@@ -12,15 +12,11 @@ let db = Firestore.firestore()
 
 class CreateCommunityVC: UIViewController {
     
-    @IBOutlet weak var addNewImage: UIImageView!
-    @IBOutlet weak var addNewName: UITextField!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-    @IBAction func addImage(_ sender: Any) {  
-    }
+    
+    @IBOutlet weak var addNewName: UITextField!
     
     @IBAction func createCommunityButton(_ sender: Any) {
         guard let nameOfCommunity = addNewName.text , nameOfCommunity.isEmpty == false else {

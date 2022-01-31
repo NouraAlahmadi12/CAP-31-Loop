@@ -15,6 +15,7 @@ class CommunityVC: UIViewController{
     var arrayOfCommunities = [Community]()
     
     @IBOutlet weak var communityCV: UICollectionView!
+    @IBOutlet weak var deleteOutlet: UIBarButtonItem!
     
     func observeCommunity(){
         let databaseRef = Database.database().reference()
@@ -46,6 +47,7 @@ class CommunityVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        deleteOutlet.isEnabled = false
         communityCV.delegate = self
         communityCV.dataSource = self
     }
@@ -75,6 +77,7 @@ extension CommunityVC: UICollectionViewDataSource , UICollectionViewDelegate {
         let cell = communityCV.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         let item = arrayOfCommunities[indexPath.row]
         cell.communityNameView.text = item.communityName
+        cell.communityImageView.layer.cornerRadius = 12
         return cell
     }
     
