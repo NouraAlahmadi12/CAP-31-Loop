@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		510EEA4D2771053000C1D669 /* UserCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510EEA4C2771053000C1D669 /* UserCVCell.swift */; };
 		5118E30127A7471C00DA4A36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5118E30027A7471C00DA4A36 /* Assets.xcassets */; };
+		5118E30327A7D33600DA4A36 /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5118E30227A7D33600DA4A36 /* ForgetPasswordVC.swift */; };
 		514A26DF27745CC50047865B /* SettignScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A26DE27745CC40047865B /* SettignScreenVC.swift */; };
 		514A26E327745D6F0047865B /* CommunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A26E227745D6F0047865B /* CommunityVC.swift */; };
 		5169D7FD27996A72003DFC90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5169D7FC27996A72003DFC90 /* GoogleService-Info.plist */; };
@@ -34,6 +35,7 @@
 		3E6584EC13E020C3E3C878F6 /* Pods_LoopChat1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoopChat1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		510EEA4C2771053000C1D669 /* UserCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCVCell.swift; sourceTree = "<group>"; };
 		5118E30027A7471C00DA4A36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5118E30227A7D33600DA4A36 /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 		514A26DE27745CC40047865B /* SettignScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettignScreenVC.swift; sourceTree = "<group>"; };
 		514A26E227745D6F0047865B /* CommunityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityVC.swift; sourceTree = "<group>"; };
 		5169D7FC27996A72003DFC90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				51DFF51127707585004CA002 /* SignupAndLoginVC.swift */,
+				5118E30227A7D33600DA4A36 /* ForgetPasswordVC.swift */,
 				514A26DE27745CC40047865B /* SettignScreenVC.swift */,
 				514A26E227745D6F0047865B /* CommunityVC.swift */,
 				51D678112799655A00E07ACD /* CreateCommunityVC.swift */,
@@ -308,6 +311,7 @@
 				514A26DF27745CC50047865B /* SettignScreenVC.swift in Sources */,
 				519BD55D277C50BC00EBF334 /* User.swift in Sources */,
 				519BD559277C506300EBF334 /* Community.swift in Sources */,
+				5118E30327A7D33600DA4A36 /* ForgetPasswordVC.swift in Sources */,
 				51D678122799655A00E07ACD /* CreateCommunityVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,7 +10,6 @@ import Firebase
 class UserProfileVC: UIViewController {
     
     
-    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileUserName: UITextField!
     @IBOutlet weak var profileEmail: UITextField!
     

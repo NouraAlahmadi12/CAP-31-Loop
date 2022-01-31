@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import UIKit
 struct Community: Codable {
     var communityName : String
     var communityID : String
